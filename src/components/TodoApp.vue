@@ -17,6 +17,11 @@ const addActivity = () => {
 const cancelActivity = (index) => {
   activities.value.splice(index, 1);
 };
+
+// Fungsi untuk toggle (menceklist) kegiatan selesai
+const toggleComplete = (index) => {
+  activities.value[index].completed = !activities.value[index].completed;
+};
 </script>
 
 <template>
@@ -29,6 +34,12 @@ const cancelActivity = (index) => {
       <button @click="addActivity">Add</button>
     </div>
 
+    <div class="todo-filter">
+      <label>
+        <input type="checkbox" v-model="showOnlyIncomplete" />
+        Show only unfinished activities
+      </label>
+    </div>
  </div>
 
 </template>
