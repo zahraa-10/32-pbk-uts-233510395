@@ -1,0 +1,110 @@
+/* style.css untuk aplikasi Todo List */
+
+/* Global Styles */
+body {
+  font-family: "Lilita One", sans-serif;
+  background-color:palevioletred;
+  margin: 20px;
+  padding: 0;
+}
+
+.app {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: pink;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  
+}
+
+.app h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* TodoApp Component */
+.todo-app {
+  margin-top: 20px;
+}
+
+/* Input dan tombol pada form tambah kegiatan */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.todo-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.todo-input button {
+  padding: 10px 15px;
+  background-color: mediumturquoise;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.todo-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Filter Checkbox */
+.todo-filter {
+  margin-bottom: 15px;
+}
+
+.todo-filter input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.2);
+}
+
+/* Daftar Kegiatan */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.activity-item span {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Efek coret jika kegiatan telah selesai */
+.activity-item span.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Tombol Hapus */
+.delete-btn {
+  background-color: #dc3545;
+  border: none;
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
