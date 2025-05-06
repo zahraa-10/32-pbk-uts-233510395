@@ -12,6 +12,11 @@ const addActivity = () => {
     newActivity.value = "";
   }
 };
+
+// Fungsi untuk membatalkan (menghapus) kegiatan
+const cancelActivity = (index) => {
+  activities.value.splice(index, 1);
+};
 </script>
 
 <template>
