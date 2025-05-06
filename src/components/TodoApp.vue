@@ -22,6 +22,13 @@ const cancelActivity = (index) => {
 const toggleComplete = (index) => {
   activities.value[index].completed = !activities.value[index].completed;
 };
+
+// Computed property untuk memfilter kegiatan
+const filteredActivities = computed(() => {
+  return showOnlyIncomplete.value
+    ? activities.value.filter(activity => !activity.completed)
+    : activities.value;
+});
 </script>
 
 <template>
@@ -40,6 +47,18 @@ const toggleComplete = (index) => {
         Show only unfinished activities
       </label>
     </div>
- </div>
+    <ul class="todo-list">
+      <li v-for="(activity, index) in filteredActivities" :key="index" class="activity-item">
+        <input 
+          type="checkbox" 
+          :checked="activity.completed"
+          @change="toggleComplete(index)" />
+        <span :class="{ completed: activity.completed }">
+          {{ activity.text }}
+        </span>
+        <button class="delete-btn" @click="cancelActivity(index)">Delete</button>
+      </li>
+    </ul>
+  </div>
 
 </template>
